@@ -1,6 +1,5 @@
 # Team Profile Generator
 
-## Description
 
 ## Table of Contents
 * [Description](#description)
@@ -9,6 +8,9 @@
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
+
+## Description
+
 
 ## Installation
 
