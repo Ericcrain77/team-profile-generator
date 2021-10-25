@@ -55,19 +55,19 @@ const generatePage = function(data) {
         let role = employee.getRole();
 
         if (role === 'Manager') {
-            let officeNumber = employee.officeNumber();
+            let officeNumber = employee.getOfficeNumber();
             let officeNum = `<p>Office Number: ${officeNumber}</p>`
             const managerSection = createEmployee(name, id, email, officeNum);
             teamMembersFull.push(managerSection);
         } else if (role === 'Engineer') {
             let gitHubUsername = employee.getGitHubUsername();
             let ghUsrn = `<p>GitHub Username: <a href = "https://github.com/${gitHubUsername}">${gitHubUsername}</a></p>`;
-            const engineerSection = createEmployee(name, id, email, gitHubUsername);
+            const engineerSection = createEmployee(name, id, email, ghUsrn);
             teamMembersFull.push(engineerSection);
         } else if (role === 'Intern') {
             let school = employee.getSchool();
             let edu = `<p>School: ${school}</p>`
-            const internSection = createEmployee(name, id, email, school);
+            const internSection = createEmployee(name, id, email, edu);
             teamMembersFull.push(internSection);
         } else {
             console.log("Failure to retrieve teammembers.")
