@@ -1,0 +1,33 @@
+:root {
+    --primary-color: #2884c2;
+    --secondary-color: #ffffff;
+    --tertiary-color: #000000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 30px
+}
+
+.header h1 {
+    color: var(--secondary-color);
+}
+
+.members {
+    justify-content: space-between;
+}
+
+.member-box {
+    margin: 30px;
+    border: 2px solid var(--tertiary-color);
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+}
