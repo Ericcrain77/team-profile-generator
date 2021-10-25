@@ -15,7 +15,7 @@ Generated Webpage with Team Profiles
 In order to run this code, you will have to do an NPM install for jest and inquirer.
 
 ## Tutorial
-![Tutorial Video](/utils/tutorial video/2021-10-25 19-22-22.mkv)
+A tutorial video can be found in the repository under the path: /utils/tutorial_video/2021-10-25 19-22-22.mkv
 
 ## Questions
 Reach out to me using my [Github account](https://github.com/Ericcrain77) or my [email](ericcrain77@gmail.com).
