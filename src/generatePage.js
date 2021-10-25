@@ -1,22 +1,22 @@
 function createEmployee(name, id, email, value1, value2) {
     return `
-    <section>
-        <div>
-            <h3>${name}</h3>
-            ${value2}
-        </div>
-        <div>
+        <section class = "member-box">
             <div>
-                <p>ID: ${id}</p>
+                <h2>${name}</h2>
+                ${value2}
             </div>
             <div>
-                <p>Email: <a href = "mailto:${email}">${email}</a></p>
+                <div>
+                    <p>ID: ${id}</p>
+                </div>
+                <div>
+                    <p>Email: <a href = "mailto:${email}">${email}</a></p>
+                </div>
+                <div>
+                    ${value1}
+                </div>
             </div>
-            <div>
-                ${value1}
-            </div>
-        </div>
-    </section>
+        </section>
     `
 };
 
@@ -28,14 +28,15 @@ function createHTML(employeeSections) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
         <title>My Team</title>
     </head>
     <body>
-        <header>
+        <header class = "header">
             <h1>My Team</h1>
         </header>
         <main>
-            <section>
+            <section class = "members">
                 ${employeeSections}
             </section>
         </main>
@@ -56,18 +57,21 @@ const generatePage = function(data) {
 
         if (role === 'Manager') {
             let officeNumber = employee.getOfficeNumber();
-            let officeNum = `<p>Office Number: ${officeNumber}</p>`
-            const managerSection = createEmployee(name, id, email, officeNum);
+            let officeNum = `<p>Office Number: ${officeNumber}</p>`;
+            let role = `<h3>Manager</h3>`;
+            const managerSection = createEmployee(name, id, email, officeNum, role);
             teamMembersFull.push(managerSection);
         } else if (role === 'Engineer') {
             let gitHubUsername = employee.getGitHubUsername();
             let ghUsrn = `<p>GitHub Username: <a href = "https://github.com/${gitHubUsername}">${gitHubUsername}</a></p>`;
-            const engineerSection = createEmployee(name, id, email, ghUsrn);
+            let role = `<h3>Engineer</h3>`;
+            const engineerSection = createEmployee(name, id, email, ghUsrn, role);
             teamMembersFull.push(engineerSection);
         } else if (role === 'Intern') {
             let school = employee.getSchool();
-            let edu = `<p>School: ${school}</p>`
-            const internSection = createEmployee(name, id, email, edu);
+            let edu = `<p>School: ${school}</p>`;
+            let role = `<h3>Intern</h3>`;
+            const internSection = createEmployee(name, id, email, edu, role);
             teamMembersFull.push(internSection);
         } else {
             console.log("Failure to retrieve teammembers.")

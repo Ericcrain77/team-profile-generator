@@ -198,8 +198,8 @@ function writeToFile(teamMembers) {
     })
 };
 
-function init() {
+function initalize() {
     managerQuestions();
 };
 
-init();
+initalize();
