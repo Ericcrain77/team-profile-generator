@@ -4,14 +4,14 @@ function createEmployeeCard(name, icon, id, email, value1, value2) {
             <div class="card-header">
                 <h2>${name}</h2>
                 <div class="row icon">
-                    <img src="../assets/icons/${icon}.png" /><h3>${value1}</h3>
+                    <img src="../assets/icons/${icon}.png" /><h3>${value2}</h3>
                 </div>
             </div>
             <div class="card-body">
                 <div class="align-items-start">
                     <h5>ID: ${id}</h5>
                     <h5>Email: <a href="mailto:${email}">${email}</a></h5>
-                    <h5>${value2}</h5>
+                    <h5>${value1}</h5>
                 </div>
             </div>
         </div>

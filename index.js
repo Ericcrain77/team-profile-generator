@@ -18,18 +18,6 @@ const employeeQuestions = (value1, value2) => {
     inquirer.prompt([
         {
             type: 'input',
-            name: 'name',
-            messgae: "What is the employee's full name?",
-            validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    console.log("Enter Employee's Full Name.");
-                }
-            }
-        },
-        {
-            type: 'input',
             name: 'id',
             message: "What is the employee's ID number?",
             validate: nameInput => {
@@ -82,8 +70,21 @@ const managerQuestions = () => {
     inquirer.prompt([
         {
             type: 'input',
+            name: 'name',
+            message: 'What is your name?',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Enter your name.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
             name: 'officeNumber',
-            message: "What is the Manager's office number?",
+            message: "What is your office number?",
             validate: nameInput => {
                 if (isNaN(nameInput)) {
                     console.log('Enter an office number');
@@ -128,6 +129,19 @@ const engineerQuestions = () => {
     inquirer.prompt([
         {
             type: 'input',
+            name: 'name',
+            message: 'What is the name of the engineer?',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Enter the name of the engineer.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
             name: 'gitHubUsername',
             message: 'What is the GitHub Username of this Engineer?',
             validate: nameInput => {
@@ -149,6 +163,19 @@ const engineerQuestions = () => {
 // asking the questions for interns
 const internQuestions = () => {
     inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is the name of the intern?',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Enter the name of the intern.');
+                    return false;
+                }
+            }
+        },
         {
             type: 'input',
             name: 'school',
@@ -191,9 +218,9 @@ const addEmployee = () => {
             employeeType();
         } else {
             console.log(`
-                =====================
-                Your team is complete
-                =====================
+            =====================
+            Your team is complete
+            =====================
             `);
             return writeToFile(teamArray);
         }
