@@ -201,7 +201,7 @@ const addEmployee = () => {
 };
 
 function writeToFile(teamArray) {
-    const team = generatePage(teamArray);
+    const team = generateHTML(teamArray);
     fs.writeFile('./dist/index.html', team, err => {
         if (err) {
             console.error(err);

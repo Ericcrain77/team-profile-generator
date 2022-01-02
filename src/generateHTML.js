@@ -47,7 +47,7 @@ function createHTML(employeeCards) {
     `
 };
 
-const generatePage = function(data) {
+const generateHTML = function(data) {
     var teamMembersFull = [];
 
     for (var i = 0; i < data.length; i++) {
@@ -87,4 +87,4 @@ const generatePage = function(data) {
     return createHTML(teamSection);
 };
 
-module.exports = generatePage;
+module.exports = generateHTML;
