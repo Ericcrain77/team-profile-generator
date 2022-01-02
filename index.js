@@ -20,8 +20,8 @@ const employeeQuestions = (value1, value2) => {
             type: 'input',
             name: 'id',
             message: "What is the employee's ID number?",
-            validate: nameInput => {
-                if (isNaN(nameInput)) {
+            validate: idInput => {
+                if (isNaN(idInput)) {
                     console.log("Enter employee's ID number.");
                     return false;
                 } else {
@@ -33,8 +33,8 @@ const employeeQuestions = (value1, value2) => {
             type: 'input',
             name: 'email',
             message: "What is the employee's email address?",
-            validate: nameInput => {
-                if (nameInput) {
+            validate: emailInput => {
+                if (emailInput) {
                     return true;
                 } else {
                     console.log("Enter employee's email address.");
@@ -85,8 +85,8 @@ const managerQuestions = () => {
             type: 'input',
             name: 'officeNumber',
             message: "What is your office number?",
-            validate: nameInput => {
-                if (isNaN(nameInput)) {
+            validate: numberInput => {
+                if (isNaN(numberInput)) {
                     console.log('Enter an office number');
                     return false;
                 } else {
@@ -95,10 +95,11 @@ const managerQuestions = () => {
             }
         }
     ])
-    .then(managerData => {
-        var { officeNumber } = managerData;
+    .then(data => {
+        var { officeNumber } = data;
         var role = 'Manager';
-        employeeQuestions(role, officeNumber);
+        var { name } = data;
+        employeeQuestions(role, name, officeNumber);
     })
 };
 
@@ -144,8 +145,8 @@ const engineerQuestions = () => {
             type: 'input',
             name: 'gitHubUsername',
             message: 'What is the GitHub Username of this Engineer?',
-            validate: nameInput => {
-                if (nameInput) {
+            validate: gitHubUsernameInput => {
+                if (gitHubUsernameInput) {
                     return true;
                 } else {
                     console.log("Enter Engineer's GitHub Username");
@@ -153,10 +154,11 @@ const engineerQuestions = () => {
             }
         }
     ])
-    .then(engineerData => {
-        var { gitHubUsername } = engineerData;
+    .then(data => {
+        var { gitHubUsername } = data;
         var role = 'Engineer';
-        employeeQuestions(role, gitHubUsername);
+        var { name } = data;
+        employeeQuestions(role, name, gitHubUsername);
     })
 };
 
@@ -180,8 +182,8 @@ const internQuestions = () => {
             type: 'input',
             name: 'school',
             message: 'What is the school of this Intern?',
-            validate: nameInput => {
-                if (nameInput) {
+            validate: schoolInput => {
+                if (schoolInput) {
                     return true;
                 } else {
                     console.log("Enter Intern's School");
@@ -189,10 +191,11 @@ const internQuestions = () => {
             }
         }
     ])
-    .then(internData => {
-        var { school } = internData;
+    .then(data => {
+        var { school } = data;
         var role = 'Intern';
-        employeeQuestions(role, school);
+        var { name } = data;
+        employeeQuestions(role, name, school);
     })
 };
 

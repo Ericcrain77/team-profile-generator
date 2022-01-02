@@ -59,21 +59,21 @@ const generateHTML = function(data) {
 
         if (role === 'Manager') {
             var officeNumber = employee.getOfficeNumber();
-            var officeNum = `<h5>Office Number: ${officeNumber}</h5>`;
+            var officeNum = `Office Number: ${officeNumber}`;
             var role = `Manager`;
             var icon = `manager`;
             const managerSection = createEmployeeCard(name, icon, id, email, officeNum, role);
             teamMembersFull.push(managerSection);
         } else if (role === 'Engineer') {
             var gitHubUsername = employee.getGithub();
-            var ghUsrn = `<h5>GitHub: <a href = "https://github.com/${gitHubUsername}">${gitHubUsername}</a></h5>`;
+            var ghUsrn = `GitHub: <a href="https://github.com/${gitHubUsername}">${gitHubUsername}</a>`;
             var role = `Engineer`;
             var icon = `engineer`;
             const engineerSection = createEmployeeCard(name, icon, id, email, ghUsrn, role);
             teamMembersFull.push(engineerSection);
         } else if (role === 'Intern') {
             var school = employee.getSchool();
-            var edu = `<h5>School: ${school}</h5>`;
+            var edu = `School: ${school}`;
             var role = `Intern`;
             var icon = `intern`;
             const internSection = createEmployeeCard(name, icon, id, email, edu, role);
