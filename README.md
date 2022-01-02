@@ -23,13 +23,13 @@ SO THAT I have quick access to their emails and GitHub profiles
 ## Screenshots
 
 Inquirer Prompt Questions
-![Inquirer Prompt Questions](/assets/images/Propmt-Questions.png)
+![Inquirer Prompt Questions](/assets/images/Prompt-Questions.png)
 
 Generated Index.HTML Page
 ![Generated Index.HTML Page](/assets/images/Generated-index-page.png)
 
 Jest Results
-![Jest Results](/assets/images/Generated-index-page.png)
+![Jest Results](/assets/images/jest-test-results.png)
 
 ## Tutorial
 Tutorial video can be found in the assets folder>tutorial_video>Challenge-10-Tutorial.mkv pathway in the GitHub Repo, or by following this link.
