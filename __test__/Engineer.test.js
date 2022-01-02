@@ -9,7 +9,7 @@ test("Create an engineer GitHub username", () => {
 test("Obtain engineer's GitHub username", () => {
     const engineer = new Engineer('test', 2, 'test@email.com', 'testUsrName');
 
-    expect(engineer.getGitHub()).toEqual(expect.any(String));
+    expect(engineer.getGithub()).toEqual(expect.any(String));
 })
 
 test("Obtains an engineer's role", () => {
