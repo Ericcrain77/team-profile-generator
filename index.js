@@ -14,7 +14,7 @@ const Manager = require('./lib/Manager');
 const teamArray = [];
 
 // asking Employee Questions
-const employeeQuestions = (value1, value2, value3) => {
+const employeeQs = (value1, value2, value3) => {
     inquirer.prompt([
         {
             type: 'input',
@@ -62,14 +62,14 @@ const employeeQuestions = (value1, value2, value3) => {
             const intern = new Intern (name, id, email, school);
             teamArray.push(intern);
         } else {
-            console.log('Failed to enter employee data correctly (employeeQuestions constructor function)')
+            console.log('Failed to enter employee data correctly (employeeQs constructor function)')
         }
         addEmployee();
     })
 };
 
 // asking the questions for managers
-const managerQuestions = () => {
+const managerQs = () => {
     inquirer.prompt([
         {
             type: 'input',
@@ -101,7 +101,7 @@ const managerQuestions = () => {
     .then(employeeData => {
         var { name, officeNumber } = employeeData;
         var role = 'Manager';
-        employeeQuestions(role, name, officeNumber);
+        employeeQs(role, name, officeNumber);
     })
 };
 
@@ -118,9 +118,9 @@ const employeeType = () => {
         var { role } = employeeTypeData;
 
         if (role === 'Engineer') {
-            engineerQuestions();
+            engineerQs();
         } else if (role === 'Intern') {
-            internQuestions();
+            internQs();
         } else {
             console.log('Failed to choose an employee type (employeeType() Function)');
         }
@@ -128,7 +128,7 @@ const employeeType = () => {
 };
 
 // asking the questions for engineers
-const engineerQuestions = () => {
+const engineerQs = () => {
     inquirer.prompt([
         {
             type: 'input',
@@ -159,12 +159,12 @@ const engineerQuestions = () => {
     .then(employeeData => {
         var { name, gitHubUsername } = employeeData;
         var role = 'Engineer';
-        employeeQuestions(role, name, gitHubUsername);
+        employeeQs(role, name, gitHubUsername);
     })
 };
 
 // asking the questions for interns
-const internQuestions = () => {
+const internQs = () => {
     inquirer.prompt([
         {
             type: 'input',
@@ -195,7 +195,7 @@ const internQuestions = () => {
     .then(employeeData => {
         var { name, school } = employeeData;
         var role = 'Intern';
-        employeeQuestions(role, name, school);
+        employeeQs(role, name, school);
     })
 };
 
@@ -247,7 +247,7 @@ function writeToFile(teamArray) {
 };
 
 function init() {
-    managerQuestions();
+    managerQs();
 };
 
 init();
