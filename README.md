@@ -23,6 +23,7 @@ SO THAT I have quick access to their emails and GitHub profiles
 ## Screenshots
 
 Inquirer Prompt Questions
+
 ![Inquirer Prompt Questions](/assets/images/Prompt-Questions.png)
 
 Generated Index.HTML Page
