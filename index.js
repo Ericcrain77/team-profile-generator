@@ -95,10 +95,9 @@ const managerQuestions = () => {
             }
         }
     ])
-    .then(data => {
-        var { officeNumber } = data;
+    .then(employeeData => {
+        var { name, officeNumber } = employeeData;
         var role = 'Manager';
-        var { name } = data;
         employeeQuestions(role, name, officeNumber);
     })
 };
@@ -154,10 +153,9 @@ const engineerQuestions = () => {
             }
         }
     ])
-    .then(data => {
-        var { gitHubUsername } = data;
+    .then(employeeData => {
+        var { name, gitHubUsername } = employeeData;
         var role = 'Engineer';
-        var { name } = data;
         employeeQuestions(role, name, gitHubUsername);
     })
 };
@@ -191,11 +189,10 @@ const internQuestions = () => {
             }
         }
     ])
-    .then(data => {
-        var { school } = data;
+    .then(employeeData => {
+        var { nameInput, schoolInput } = employeeData;
         var role = 'Intern';
-        var { name } = data;
-        employeeQuestions(role, name, school);
+        employeeQuestions(role, nameInput, schoolInput);
     })
 };
 
