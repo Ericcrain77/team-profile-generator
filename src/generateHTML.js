@@ -65,7 +65,7 @@ const generateHTML = function(data) {
             const managerSection = createEmployeeCard(name, icon, id, email, officeNum, role);
             teamMembersFull.push(managerSection);
         } else if (role === 'Engineer') {
-            var gitHubUsername = employee.getGitHubUsername();
+            var gitHubUsername = employee.getGithub();
             var ghUsrn = `<h5>GitHub: <a href = "https://github.com/${gitHubUsername}">${gitHubUsername}</a></h5>`;
             var role = `Engineer`;
             var icon = `engineer`;
