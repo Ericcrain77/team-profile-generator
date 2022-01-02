@@ -1,10 +1,10 @@
-function createEmployeeCard(name, icon, id, email, value1, value2) {
+function createEmployeeCard(name, icon, id, email, value1, role) {
     return `
         <div class="card bg-primary mb-3" style="width: 18rem;">
             <div class="card-header">
                 <h2>${name}</h2>
                 <div class="row icon">
-                    <img src="../assets/icons/${icon}.png" /><h3>${value2}</h3>
+                    <img src="../assets/icons/${icon}.png" /><h3>${role}</h3>
                 </div>
             </div>
             <div class="card-body">

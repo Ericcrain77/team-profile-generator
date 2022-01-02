@@ -14,7 +14,7 @@ const Manager = require('./lib/Manager');
 const teamArray = [];
 
 // asking Employee Questions
-const employeeQuestions = (value1, value2) => {
+const employeeQuestions = (value1, value2, value3) => {
     inquirer.prompt([
         {
             type: 'input',
@@ -44,18 +44,21 @@ const employeeQuestions = (value1, value2) => {
     ])
     .then(employeeData => {
         if (value1 === 'Manager') {
-            var officeNumber = value2;
-            var { name, id, email } = employeeData;
+            var officeNumber = value3;
+            var name = value2;
+            var { id, email } = employeeData;
             const manager = new Manager (name, id, email, officeNumber);
             teamArray.push(manager);
         } else if (value1 === 'Engineer') {
-            var gitHubUsername = value2;
-            var { name, id, email } = employeeData;
+            var gitHubUsername = value3;
+            var name = value2;
+            var { id, email } = employeeData;
             const engineer = new Engineer (name, id, email, gitHubUsername);
             teamArray.push(engineer);
         } else if (value1 === 'Intern') {
-            var school = value2;
-            var { name, id, email } = employeeData;
+            var school = value3;
+            var name = value2;
+            var { id, email } = employeeData;
             const intern = new Intern (name, id, email, school);
             teamArray.push(intern);
         } else {
@@ -190,9 +193,9 @@ const internQuestions = () => {
         }
     ])
     .then(employeeData => {
-        var { nameInput, schoolInput } = employeeData;
+        var { name, school } = employeeData;
         var role = 'Intern';
-        employeeQuestions(role, nameInput, schoolInput);
+        employeeQuestions(role, name, school);
     })
 };
 
@@ -222,6 +225,7 @@ const addEmployee = () => {
             Your team is complete
             =====================
             `);
+
             return writeToFile(teamArray);
         }
     })
