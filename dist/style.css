@@ -1,7 +1,9 @@
 :root {
-    --primary-color: #2884c2;
-    --secondary-color: #ffffff;
-    --tertiary-color: #000000;
+    --primary-color: #ffffff;
+    --secondary-color: #E84756;
+    --tertiary-color: #0077F7;
+    --quaternary-color: #F6F7F9;
+    --quinary-color: #000000;
 }
 
 * {
@@ -11,23 +13,40 @@
 }
 
 .header {
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+}
+
+.card {  
+    box-shadow: 4px 4px 10px var(--quinary-color);
+    border: none;
+    margin: 40px;
+}
+
+.card-header {
+    color: var(--primary-color);
+    background-color: var(--tertiary-color);
+}
+
+.card-body {
+    color: var(--quinary-color);
+    background-color: var(--quaternary-color);
+}
+
+.card-body h5 {
+    font-size: 0.7vw;
+    border: solid 1px rgb(200, 200, 200);
+    padding: 10px;
     background-color: var(--primary-color);
-    text-align: center;
-    padding: 30px
+    margin: 0;
 }
 
-.header h1 {
-    color: var(--secondary-color);
+.icon img {
+    width: 38px;
+    margin: 0 10px
 }
 
-.members {
-    justify-content: space-between;
-}
-
-.member-box {
-    margin: 30px;
-    border: 2px solid var(--tertiary-color);
-    border-radius: 5px;
-    padding: 15px;
-    text-align: center;
+.icon h3 {
+    font-size: 1.3vw;
 }
